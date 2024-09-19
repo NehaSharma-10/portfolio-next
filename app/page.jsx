@@ -6,8 +6,8 @@ import "../public/assets/custom.css";
 import { NextUIProvider } from "@nextui-org/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Home() {
   return (
@@ -17,8 +17,9 @@ export default function Home() {
         <div>
           <h1 className="text-4xl font-bold">Neha Sharma</h1>
           <p>Frontend Engineer</p>
-          <p>Creating smooth, dynamic websites that leave lasting impressions.</p>
-
+          <p>
+            Creating smooth, dynamic websites that leave lasting impressions.
+          </p>
         </div>
         <div>
           <ul>
@@ -30,78 +31,44 @@ export default function Home() {
 
         <div>
           <ul className="flex gap-4">
-            <li><GitHubIcon className="text-5xl" /></li>
-            <li><LinkedInIcon className="text-5xl" /></li>
+            <li>
+              <GitHubIcon className="text-5xl" />
+            </li>
+            <li>
+              <LinkedInIcon className="text-5xl" />
+            </li>
           </ul>
         </div>
       </section>
 
       <section className="absolute right-0 w-1/2 p-10">
-        <div className="  min-h-screen    flex flex-col gap-2">
+        <div className="  min-h-screen    flex flex-col justify-start gap-2 pt-10">
           <p>
-            Back in 2012, I decided to try my hand at creating custom Tumblr
-            themes and tumbled head first into the rabbit hole of coding and web
-            development. Fast-forward to today, and I’ve had the privilege of
-            building software for an advertising agency, a start-up, a huge
-            corporation, and a digital product studio.
+            In 2019, during my undergraduate studies, I found myself
+            increasingly drawn to the world of frontend development. What
+            started as curiosity quickly turned into a passion, and I immersed
+            myself in learning how to build engaging, user-friendly websites.
           </p>
           <p>
-            My main focus these days is building accessible user interfaces for
-            our customers at Klaviyo. I most enjoy building software in the
-            sweet spot where design and engineering meet — things that look good
-            but are also built well under the hood. In my free time, I've also
-            released an online video course that covers everything you need to
-            know to build a web app with the Spotify API.
+            Fast forward to today, and I’ve had the privilege of working on
+            projects ranging from dynamic portfolios to complex e-commerce
+            platforms. My main focus these days is building intuitive and
+            responsive user interfaces that provide a seamless experience for
+            users. I love working at the intersection of design and
+            engineering—where things not only look great but perform efficiently
+            under the hood.
           </p>
           <p>
-            When I’m not at the computer, I’m usually rock climbing, reading,
-            hanging out with my wife and two cats, or running around Hyrule
-            searching for Korok seeds K o r o k s e e d s .
-          </p>
-        </div>
-        <div className="min-h-screen    flex flex-col gap-2">
-          <p>
-            Back in 2012, I decided to try my hand at creating custom Tumblr
-            themes and tumbled head first into the rabbit hole of coding and web
-            development. Fast-forward to today, and I’ve had the privilege of
-            building software for an advertising agency, a start-up, a huge
-            corporation, and a digital product studio.
-          </p>
-          <p>
-            My main focus these days is building accessible user interfaces for
-            our customers at Klaviyo. I most enjoy building software in the
-            sweet spot where design and engineering meet — things that look good
-            but are also built well under the hood. In my free time, I've also
-            released an online video course that covers everything you need to
-            know to build a web app with the Spotify API.
-          </p>
-          <p>
-            When I’m not at the computer, I’m usually rock climbing, reading,
-            hanging out with my wife and two cats, or running around Hyrule
-            searching for Korok seeds K o r o k s e e d s .
+            When I'm not coding, you'll find me exploring new tech trends,
+            catching up on my favorite reads, or simply enjoying time with
+            friends and family.
           </p>
         </div>
         <div className="min-h-screen    flex flex-col gap-2">
-          <p>
-            Back in 2012, I decided to try my hand at creating custom Tumblr
-            themes and tumbled head first into the rabbit hole of coding and web
-            development. Fast-forward to today, and I’ve had the privilege of
-            building software for an advertising agency, a start-up, a huge
-            corporation, and a digital product studio.
-          </p>
-          <p>
-            My main focus these days is building accessible user interfaces for
-            our customers at Klaviyo. I most enjoy building software in the
-            sweet spot where design and engineering meet — things that look good
-            but are also built well under the hood. In my free time, I've also
-            released an online video course that covers everything you need to
-            know to build a web app with the Spotify API.
-          </p>
-          <p>
-            When I’m not at the computer, I’m usually rock climbing, reading,
-            hanging out with my wife and two cats, or running around Hyrule
-            searching for Korok seeds K o r o k s e e d s .
-          </p>
+          Experience
+        </div>
+        <div className="min-h-screen    flex flex-col gap-2">
+          projects
         </div>
       </section>
     </main>
