@@ -33,13 +33,13 @@ export default function Home() {
         <div>
           <ul className="flex gap-4">
             <li>
-              <Link href="https://github.com/NehaSharma-10/">
+              <Link target="_blank" href="https://github.com/NehaSharma-10/">
                 <GitHubIcon className="text-5xl" />
 
               </Link>
             </li>
             <li>
-              <Link href="https://www.linkedin.com/in/nehasharma8529/">
+              <Link target="_blank" href="https://www.linkedin.com/in/nehasharma8529/">
                 <LinkedInIcon className="text-5xl" />
 
               </Link>
