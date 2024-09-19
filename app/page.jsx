@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import "./globals.css";
 import "../public/assets/custom.css";
+import Link from "next/link";
 
 import { NextUIProvider } from "@nextui-org/react";
 import AOS from "aos";
@@ -32,10 +33,16 @@ export default function Home() {
         <div>
           <ul className="flex gap-4">
             <li>
-              <GitHubIcon className="text-5xl" />
+              <Link href="https://github.com/NehaSharma-10/">
+                <GitHubIcon className="text-5xl" />
+
+              </Link>
             </li>
             <li>
-              <LinkedInIcon className="text-5xl" />
+              <Link href="https://www.linkedin.com/in/nehasharma8529/">
+                <LinkedInIcon className="text-5xl" />
+
+              </Link>
             </li>
           </ul>
         </div>
