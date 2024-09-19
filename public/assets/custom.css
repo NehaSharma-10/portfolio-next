@@ -1,0 +1,8 @@
+.container.intro-div {
+    min-height: 90vh;
+}
+
+.main-bg-color {
+    /* background:  linear-gradient(to bottom,#00416a, #E4E5E6, #00416a); */
+    background: radial-gradient(600px at 736px 225px, rgba(29, 78, 216, 0.15), transparent 80%);
+}
