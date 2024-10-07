@@ -6,12 +6,12 @@ const Experience = () => {
     return (
         <>
             <main className="mt-10 flex gap-10">
-             
-                <Link href="#" className="flex bg-[#020617] exp-box p-5 border-1 border-[#ffffff16] ">
+
+                <Link href="#" className="flex bg-[#020617] exp-box py-20 border-1 border-[#ffffff16] ">
                     <div className="w-1/4">
                         <p>2023-present</p>
                     </div>
-                    <div className="w-3/4 flex flex-col gap-4">
+                    <div className="w-3/4 flex flex-col gap-10">
                         <p>Apex Web Cube Pvt Ltd <span><ArrowOutwardIcon className="text-[#EAB308]" /></span></p>
                         <p className="">
                             Build and maintain critical used to construct apex frontend,

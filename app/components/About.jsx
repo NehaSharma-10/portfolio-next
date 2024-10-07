@@ -1,12 +1,12 @@
 import React from 'react'
-
+import Link from 'next/link'
 const About = () => {
     return (
         <>
 
-            <main className='w-100'>
+            <main className='w-100 flex gap-20'>
 
-                <div className='container mx-auto flex flex-col gap-5'>
+                <div className='container mx-auto flex flex-col gap-5 my-auto'>
                     <p className=' tracking-[1px] leading-[22px] text-justify'>
                         In 2019, during my undergraduate studies, I found myself
                         increasingly drawn to the world of frontend development. What
@@ -27,8 +27,14 @@ const About = () => {
                         catching up on my favorite reads, or simply enjoying time with
                         friends and family.
                     </p>
+                    <Link href='#contact' className='bg-[#EAB308] text-black w-fit p-3 '>Contact Me </Link>
                 </div>
+                <div className='container mx-auto flex flex-col gap-5'>
+                    <img src="/assets/about.png" alt="dd" />
+                </div>
+
             </main>
+
         </>
     )
 }
