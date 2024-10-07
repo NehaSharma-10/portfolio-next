@@ -11,58 +11,57 @@ import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <main className="flex flex-row scroll-smooth	">
-      {/* left side */}
-      <section className="w-1/2 text-[#fff] bg-[#FFAC33] fixed  min-h-screen flex flex-col justify-center px-10 gap-5">
-        <div>
-          <h1 className="text-4xl font-bold">Neha Sharma</h1>
-          <p>Frontend Engineer</p>
-          <p>
-            Creating smooth, dynamic websites that leave lasting impressions.
-          </p>
-        </div>
-        <div className="flex flex-col">
-          <Link href="#about"> - About</Link>
-          <Link href="#exp"> - Experience</Link>
-          <Link href="#pro"> - Projects</Link>
-        </div>
+    <main className="">
+      <section className=" text-[#F1F1F1] bg-[#111827]  w-100 flex justify-center items-center p-10 min-h-screen">
+        <div className="container mx-auto">
+          <div>
+            <h1 className="text-7xl font-bold text-[#fff] mb-3">I'm <span className="text-[#EAB308]"> Neha Sharma</span></h1>
+            <p className="text-2xl text-[#fff] uppercase">Frontend Engineer</p>
+            <p className="mt-4 text-[#F3F4F6]">
+              Creating smooth, dynamic websites that leave lasting impressions.
+            </p>
+          </div>
 
-        <div>
-          <ul className="flex gap-4">
-            <li>
-              <Link target="_blank" href="https://github.com/NehaSharma-10/">
-                <GitHubIcon className="text-5xl" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/nehasharma8529/"
-              >
-                <LinkedInIcon className="text-5xl" />
-              </Link>
-            </li>
-          </ul>
+          <div className="mt-8">
+            <ul className="flex gap-4">
+              <li>
+                <Link target="_blank" href="https://github.com/NehaSharma-10/">
+                  <GitHubIcon className="text-[#EAB308] text-4xl" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  target="_blank"
+                  href="https://www.linkedin.com/in/nehasharma8529/"
+                >
+                  <LinkedInIcon className="text-[#EAB308] text-4xl" />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
-      {/* right side */}
-      <section className="absolute right-0 w-1/2  text-white bg-auto">
+
+      <section className="bg-auto">
         <div
           id="about"
-          className="min-h-screen flex flex-col justify-start gap-2 p-10 bg-[#124559]"
+          className="min-h-screen container mx-auto flex flex-col justify-center p-10 gap-2  bg-[#020617]  text-[#F1F1F1]"
         >
+          <h2 className="text-4xl font-semibold text-[#EAB308]">About Me</h2>
           <About />
         </div>
         <div
           id="exp"
-          className="min-h-screen flex flex-col gap-2 p-10 bg-[#598392]"
+          className="min-h-screen flex flex-col gap-2 p-10 bg-[#111827] text-[#F1F1F1]"
         >
+          <h2 className="text-4xl font-semibold text-[#EAB308]">Experience</h2>
           <Experience />
         </div>
         <div
           id="pro"
-          className="min-h-screen flex flex-col gap-2 p-10 bg-[#aec3b0]"
+          className="min-h-screen flex flex-col gap-2 p-10 bg-[#020617]  text-[#F1F1F1]"
         >
+          <h2 className="text-4xl font-semibold text-[#EAB308]">Projects</h2>
           <Projects />
         </div>
       </section>
