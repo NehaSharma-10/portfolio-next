@@ -10,9 +10,7 @@ body {
 .bg-black {
     background-color: rgba(0, 0, 0, 1);
 }
-p{
-    font-family: "Open Sans", sans-serif !important;
-}
+
 .exp-box {
     position: relative;
     border-radius: 15px;
@@ -37,7 +35,7 @@ p{
 }
 
 .exp-box:hover::before {
-    border-color: #fff;
+    border-color: #EAB308;
     animation: border-draw 1.5s ease forwards;
 }
 

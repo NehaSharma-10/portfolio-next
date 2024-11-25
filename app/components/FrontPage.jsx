@@ -7,9 +7,9 @@ const FrontPage = () => {
         <>
             <main className='flex flex-col'>
                 <div>
-                    <h1 className="lg:text-8xl md:text-6xl font-bold text-[#fff] mb-3">I'm <span className="text-[#EAB308]"> Neha Sharma</span></h1>
-                    <p className="text-2xl text-[#fff] uppercase text-center">Frontend Engineer</p>
-                    <p className="mt-4 text-[#F3F4F6] text-center">
+                    <h1 className="lg:text-8xl md:text-6xl font-bold blueClr mb-3"> <span className="text-[##020617]"> Neha Sharma</span></h1>
+                    <p className="text-3xl blueClr uppercase text-center font-semibold">Frontend Engineer</p>
+                    <p className="mt-4 blueClr text-center">
                         Creating smooth, dynamic websites that leave lasting impressions.
                     </p>
                 </div>
@@ -18,7 +18,7 @@ const FrontPage = () => {
                     <ul className="flex gap-4 justify-center">
                         <li>
                             <Link target="_blank" href="https://github.com/NehaSharma-10/">
-                                <GitHubIcon className="text-[#EAB308] text-4xl" />
+                                <GitHubIcon className="blueClr text-[50px]" />
                             </Link>
                         </li>
                         <li>
@@ -26,7 +26,7 @@ const FrontPage = () => {
                                 target="_blank"
                                 href="https://www.linkedin.com/in/nehasharma8529/"
                             >
-                                <LinkedInIcon className="text-[#EAB308] text-4xl" />
+                                <LinkedInIcon className="blueClr text-[50px]" />
                             </Link>
                         </li>
                     </ul>

@@ -16,5 +16,11 @@
   }
 }
 
-
-@layer utilities {}
+@layer utilities {
+  .bg-blue {
+    background-color: #131935;
+  }
+  .blueClr {
+    color: #131935;
+  }
+}
