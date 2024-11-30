@@ -7,6 +7,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import FrontPage from "./components/FrontPage";
+import ContactMe from "./components/ContactMe";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
       {/* projects section  */}
       <div
         id="pro"
-        className="min-h-screen flex flex-col gap-2 p-10 bg-[#020617]  text-[#F1F1F1]"
+        className="min-h-screen flex flex-col gap-2 p-10 bg-blue   text-[#F1F1F1]"
       >
         <h2 className="text-4xl font-semibold text-[#EAB308]">
           My <span className="text-[#fff]">Projects </span>
@@ -50,11 +51,11 @@ export default function Home() {
         id="contact"
         className="min-h-screen flex flex-col gap-2 p-10 bg-[#020617] text-[#fff] "
       >
-        <h2 className="text-4xl font-semibold text-[#EAB308]">
+        <h2 className="text-4xl font-semibold text-[#EAB308] text-center">
           Contact <span className="text-[#fff]">Me </span>
         </h2>
 
-        <Projects />
+        <ContactMe />
       </div>
     </main>
   );

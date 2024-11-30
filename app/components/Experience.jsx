@@ -29,10 +29,10 @@ const Experience = () => {
               <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
                 Next Js
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
                 Javascript
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
                 Tailwind CSS
               </p>
             </div>
@@ -61,22 +61,21 @@ const Experience = () => {
               <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
                 HTML
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
                 CSS
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
                 Tailwind CSS
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
                 Javascript
               </p>
-              <p className="bg-[#020617] border-1 border-white text-white py-1 px-4 inline rounded-full">
+              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
                 React
               </p>
             </div>
           </div>
         </Link>
-      
       </main>
     </>
   );
