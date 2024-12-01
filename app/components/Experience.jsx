@@ -1,81 +1,51 @@
 import React from "react";
 import Link from "next/link";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import ExperienceList from "@/public/assets/data";
 
 const Experience = () => {
+  console.log(ExperienceList);
   return (
     <>
-      <main className="mt-10 flex gap-10">
-        <Link
-          href="#"
-          className="flex bg-blue exp-box border-1 border-[#ffffff16] "
-        >
-          <div className="w-full flex flex-col gap-0">
-            <p className="text-xl">
-              Apex Web Cube Pvt Ltd{" "}
-              <span>
-                <ArrowOutwardIcon className="text-[#EAB308]" />
-              </span>
-            </p>
-            <p className="text-sm mb-3">2023-present</p>
-            <p className="text-justify">
-              Build and maintain critical used to construct apex frontend,
-              across the website productBuild and maintain critical used to
-              construct apex frontend, across the website productBuild and
-              maintain critical used to construct apex frontend, across the
-              website product
-            </p>
-            <div className="mt-10 flex gap-x-3">
-              <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
-                Next Js
-              </p>
-              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
-                Javascript
-              </p>
-              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
-                Tailwind CSS
-              </p>
-            </div>
-          </div>
-        </Link>
-        <Link
-          href="#"
-          className="flex bg-blue exp-box border-1 border-[#ffffff16] "
-        >
-          <div className="w-full flex flex-col gap-0">
-            <p className="text-xl">
-              Yuktidea Technologies{" "}
-              <span>
-                <ArrowOutwardIcon className="text-[#EAB308]" />
-              </span>
-            </p>
-            <p className="text-[12px] mb-3">Aug 2022 - Dec 2023</p>
-            <p className="text-justify">
-              Build and maintain critical used to construct apex frontend,
-              across the website productBuild and maintain critical used to
-              construct apex frontend, across the website productBuild and
-              maintain critical used to construct apex frontend, across the
-              website product
-            </p>
-            <div className="mt-10 flex gap-x-3">
-              <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
-                HTML
-              </p>
-              <p className="bg-blue border-1 border-white text-white py-1 px-4 inline rounded-full">
-                CSS
-              </p>
-              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
-                Tailwind CSS
-              </p>
-              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
-                Javascript
-              </p>
-              <p className="bg-blue  border-1 border-white text-white py-1 px-4 inline rounded-full">
-                React
-              </p>
-            </div>
-          </div>
-        </Link>
+      <main className="mt-10 flex gap-5">
+        {ExperienceList.map((item) => {
+          return (
+            <Link
+              key={item.id}
+              href={item.companyUrl}
+              className="flex bg-[#f4f4f4] text-black exp-box border-1 border-[#ffffff16] "
+            >
+              <div className="w-full flex flex-col gap-0">
+                <p className="text-xl ">
+                  {item.companyName}
+                  <span>
+                    <ArrowOutwardIcon className="text-[#EAB308] hover:translate-x-6" />
+                  </span>
+                </p>
+                <p className="text-sm mb-3">{item.jobTitle}</p>
+                <p className="text-sm mb-3">
+                  {item.startDate} - {item.endDate}
+                </p>
+
+                <ul>
+                  {item.description.map((val) => {
+                    return <li className="">• {val}</li>;
+                  })}
+                </ul>
+
+                <div className="mt-10 flex gap-x-3">
+                  {item.skillTags.map((val) => {
+                    return (
+                      <p className="text-[10px] bg-blue border-1 border-white text-white py-1 px-2 inline rounded-full">
+                        {val}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </main>
     </>
   );

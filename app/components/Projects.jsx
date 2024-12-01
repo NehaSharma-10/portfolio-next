@@ -27,7 +27,7 @@ const Projects = () => {
             <Link
               key={id}
               href={item.url}
-              className="flex bg-blue exp-box border-1 border-[#ffffff16] "
+              className="flex bg-[#fff] text-black exp-box border-1 border-[#ffffff16] "
             >
               <div className="w-full flex flex-col gap-0">
                 <div>

@@ -8,20 +8,21 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import FrontPage from "./components/FrontPage";
 import ContactMe from "./components/ContactMe";
+import Skills from "./components/Skills";
 
 export default function Home() {
   return (
     <main className="">
       {/* banner section  */}
-      <div className="container mx-auto bg-[#fff] text-[#F1F1F1]  w-100 flex justify-center  items-center p-10 min-h-screen">
+      <div className=" bg-[#fff] text-[#F1F1F1]  w-100 flex justify-center  items-center p-10 min-h-screen">
         <FrontPage />
       </div>
       {/* about section  */}
       <div
         id="about"
-        className="min-h-screen container mx-auto flex flex-col justify-center p-10 gap-2  bg-blue text-[#F1F1F1]"
+        className="min-h-screen flex flex-col justify-center p-10 gap-2  bg-[#f4f4f4] "
       >
-        <h2 className="text-4xl font-semibold text-[#fff]">
+        <h2 className="text-4xl font-semibold text-black">
           About <span className="text-[#EAB308]"> Me</span>
         </h2>
         <About />
@@ -36,13 +37,24 @@ export default function Home() {
         </h2>
         <Experience />
       </div>
+
+      {/* Skills section  */}
+      <div
+        id="pro"
+        className="min-h-screen flex flex-col gap-2 p-10 bg-[#f4f4f4]   text-[#F1F1F1]"
+      >
+        <h2 className="text-4xl font-semibold text-[#EAB308] mb-6">
+          My <span className="text-[#000]">Skills </span>
+        </h2>
+        <Skills />
+      </div>
       {/* projects section  */}
       <div
         id="pro"
-        className="min-h-screen flex flex-col gap-2 p-10 bg-blue   text-[#F1F1F1]"
+        className="min-h-screen flex flex-col gap-2 p-10 bg-[#fff]   text-[#F1F1F1]"
       >
-        <h2 className="text-4xl font-semibold text-[#EAB308]">
-          My <span className="text-[#fff]">Projects </span>
+        <h2 className="text-4xl font-semibold text-[#EAB308] mb-6">
+          My <span className="text-[#000]">Projects </span>
         </h2>
         <Projects />
       </div>
