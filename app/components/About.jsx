@@ -4,7 +4,7 @@ const About = () => {
     return (
         <>
 
-            <main className='w-100 flex gap-20'>
+            <main className='w-100 flex flex-col lg:flex-row gap-20'>
 
                 <div className='container mx-auto flex flex-col gap-5 my-auto'>
                     <p className=' tracking-[1px] leading-[22px] text-justify'>
@@ -30,7 +30,7 @@ const About = () => {
                     <Link href='#contact' className='bg-[#EAB308] text-black w-fit p-3 '>Contact Me </Link>
                 </div>
                 <div className='container mx-auto flex flex-col gap-5'>
-                    <img src="/assets/about.png" alt="dd" />
+                    <img src="/assets/about.png" className='w-full' alt="dd" />
                 </div>
 
             </main>

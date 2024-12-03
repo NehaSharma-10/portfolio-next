@@ -7,10 +7,10 @@ const FrontPage = () => {
     <>
       <main className="flex flex-col">
         <div>
-          <h1 className="lg:text-8xl text-6xl font-bold text-center blueClr mb-3">
+          <h1 className="text-4xl lg:text-8xl md:text-6xl font-bold text-center blueClr mb-3">
             Neha Sharma
           </h1>
-          <p className="text-3xl blueClr uppercase text-center font-semibold">
+          <p className="text-xl lg:text-3xl blueClr uppercase text-center font-semibold">
             Frontend Engineer
           </p>
           <p className="mt-4 blueClr text-center">

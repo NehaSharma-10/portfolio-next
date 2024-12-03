@@ -4,10 +4,10 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import ExperienceList from "@/public/assets/data";
 
 const Experience = () => {
-  console.log(ExperienceList);
+  // console.log(ExperienceList);
   return (
     <>
-      <main className="mt-10 flex gap-5">
+      <main className="mt-10 flex gap-5 flex-wrap">
         {ExperienceList.map((item) => {
           return (
             <Link

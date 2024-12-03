@@ -41,10 +41,10 @@ export default function Home() {
       {/* Skills section  */}
       <div
         id="pro"
-        className="min-h-screen flex flex-col gap-2 p-10 bg-[#f4f4f4]   text-[#F1F1F1]"
+        className=" flex flex-col gap-2 p-10 bg-blue   text-[#F1F1F1]"
       >
-        <h2 className="text-4xl font-semibold text-[#EAB308] mb-6">
-          My <span className="text-[#000]">Skills </span>
+        <h2 className="text-4xl font-semibold text-[#EAB308] my-6">
+          My <span className="text-[#fff]">Skills </span>
         </h2>
         <Skills />
       </div>

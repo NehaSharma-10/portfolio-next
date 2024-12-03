@@ -7,8 +7,8 @@ const ContactMe = () => {
   return (
     <>
       <main className="w-full ">
-        <div className="container mx-auto flex gap-20 pt-20">
-          <div className="w-1/2">
+        <div className="container mx-auto flex flex-col lg:flex-row  gap-20 pt-20">
+          <div className="w-full lg:w-1/2">
             <p className="text-center">Any Queries? let's connect</p>
             <div className="mt-3 flex gap-4 justify-center">
               <Link
@@ -20,18 +20,22 @@ const ContactMe = () => {
               </Link>
 
               <Link
-               className="border-1 border-[#fff] p-3"
+                className="border-1 border-[#fff] p-3"
                 target="_blank"
                 href="https://www.linkedin.com/in/nehasharma8529/"
               >
                 <LinkedInIcon className="text-[#fff] text-[30px]" />
               </Link>
-              <Link target="_blank"  className="border-1 border-[#fff] p-3" href="mailto:nehasharma8529@gmail.com">
+              <Link
+                target="_blank"
+                className="border-1 border-[#fff] p-3"
+                href="mailto:nehasharma8529@gmail.com"
+              >
                 <EmailIcon className="text-[#fff] text-[30px]" />
               </Link>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-full lg:w-1/2">
             <form
               action=""
               className="w-5/6 flex flex-col justify-center gap-3"
