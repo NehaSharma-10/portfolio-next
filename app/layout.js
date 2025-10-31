@@ -12,10 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={inter.className} suppressHydrationWarning={true}>
         <Header />
-        {children}
+        <div className="pt-20">
+          {children}
+        </div>
       </body>
     </html>
   );
