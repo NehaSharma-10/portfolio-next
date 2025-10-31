@@ -1,119 +1,76 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import CodeIcon from '@mui/icons-material/Code'
-import DesignServicesIcon from '@mui/icons-material/DesignServices'
-import SpeedIcon from '@mui/icons-material/Speed'
 
 const About = () => {
-    const highlights = [
-        {
-            icon: <CodeIcon className="w-6 h-6" />,
-            title: "Clean Code",
-            description: "Writing maintainable, scalable code"
-        },
-        {
-            icon: <DesignServicesIcon className="w-6 h-6" />,
-            title: "UI/UX Focus",
-            description: "Pixel-perfect, user-centered design"
-        },
-        {
-            icon: <SpeedIcon className="w-6 h-6" />,
-            title: "Performance",
-            description: "Optimized for speed and efficiency"
-        }
-    ];
-
     return (
-        <div className='grid lg:grid-cols-2 gap-16 lg:gap-24 items-center'>
-            <div className='space-y-8 lg:order-1'>
-                <div className='space-y-6'>
-                    <div className='space-y-4'>
-                        <div className="inline-block">
-                            <span className="px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 text-sm font-medium rounded-full border border-amber-200">
-                                My Journey
-                            </span>
-                        </div>
-                        <h3 className="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight">
-                            Passionate about creating
-                            <span className="text-gradient"> digital experiences</span>
-                        </h3>
-                    </div>
-
-                    <div className='space-y-6 text-neutral-600 leading-relaxed'>
-                        <p className='text-lg font-light'>
-                            In <span className="font-semibold text-neutral-800">2019</span>, during my undergraduate studies, I discovered my passion for frontend development. What began as curiosity evolved into a deep commitment to crafting exceptional web experiences.
-                        </p>
-                        <p className='text-lg font-light'>
-                            Today, I specialize in building <span className="font-semibold text-neutral-800">intuitive, responsive interfaces</span> that seamlessly blend aesthetics with functionality. From dynamic portfolios to complex e-commerce platforms, I focus on delivering solutions that users love.
-                        </p>
-                        <p className='text-lg font-light'>
-                            I thrive at the intersection of <span className="font-semibold text-neutral-800">design and engineering</span>, ensuring every project not only looks stunning but performs flawlessly. When I'm not coding, you'll find me exploring emerging technologies and design trends.
-                        </p>
-                    </div>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center'>
+            <div className='space-y-6 sm:space-y-8 lg:order-1'>
+                {/* Creative Quote */}
+                <div className="relative p-4 sm:p-6 bg-white/90 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-purple-200 shadow-lg">
+                    <div className="absolute -top-1 sm:-top-2 -left-1 sm:-left-2 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
+                    <p className="text-base sm:text-lg italic text-gray-700 font-light leading-relaxed">
+                        "Design is not just what it looks like and feels like. Design is how it works."
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-500 mt-2">— Steve Jobs</p>
                 </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-                    {highlights.map((item, index) => (
-                        <div key={index} className='p-4 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-xl border border-neutral-200'>
-                            <div className='flex items-center space-x-3 mb-2'>
-                                <div className='p-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-lg'>
-                                    {item.icon}
-                                </div>
-                            </div>
-                            <h4 className='font-semibold text-neutral-900 text-sm'>{item.title}</h4>
-                            <p className='text-xs text-neutral-600 mt-1'>{item.description}</p>
-                        </div>
-                    ))}
+                <div className='space-y-4 sm:space-y-6 text-gray-600 leading-relaxed'>
+                    <p className='text-base sm:text-lg'>
+                        In <span className="font-semibold text-purple-600">2019</span>, during my undergraduate studies, I discovered my passion for frontend development.
+                        What began as curiosity evolved into a deep commitment to crafting exceptional web experiences that blend
+                        <span className="text-gradient font-medium"> creativity with functionality</span>.
+                    </p>
+                    <p className='text-base sm:text-lg'>
+                        Today, I specialize in building <span className="font-semibold text-purple-600">intuitive, responsive interfaces</span>
+                        that tell stories through code. From dynamic portfolios to complex e-commerce platforms,
+                        I focus on creating digital experiences that not only look beautiful but feel natural to use.
+                    </p>
+                    <p className='text-base sm:text-lg'>
+                        I thrive at the intersection of <span className="text-gradient font-medium">art and engineering</span>,
+                        where pixels meet purpose and every interaction is thoughtfully crafted. When I'm not coding,
+                        you'll find me exploring design trends, sketching ideas, or discovering inspiration in everyday moments.
+                    </p>
                 </div>
 
-                <div className='flex flex-col sm:flex-row gap-4 pt-4'>
+                <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6'>
                     <Link
                         href='#contact'
-                        className='btn-primary text-lg'
+                        className='btn-primary group relative overflow-hidden text-center sm:text-left'
                     >
-                        Let's Work Together
+                        <span className="relative z-10">Let's Create Together</span>
                     </Link>
                     <Link
                         href='#projects'
-                        className='btn-secondary text-lg'
+                        className='btn-secondary group text-center sm:text-left'
                     >
-                        View My Projects
+                        <span>View My Work</span>
                     </Link>
                 </div>
             </div>
 
-            <div className='relative lg:order-2'>
+            <div className='flex justify-center lg:justify-end lg:order-2'>
                 <div className='relative'>
-                    {/* Main image container */}
-                    <div className='relative bg-gradient-to-br from-amber-50 via-orange-50 to-blue-50 rounded-3xl p-8 shadow-elegant-xl border border-neutral-200'>
-                        <Image
-                            src="/assets/about.png"
-                            width={500}
-                            height={500}
-                            className='w-full h-auto rounded-2xl shadow-elegant'
-                            alt="Neha Sharma - Frontend Developer"
-                        />
-                    </div>
-
-                    {/* Floating elements */}
-                    <div className='absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl opacity-80 blur-sm'></div>
-                    <div className='absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl opacity-60 blur-sm'></div>
-
-                    {/* Stats card */}
-                    <div className='absolute -bottom-4 -right-4 bg-white rounded-2xl p-4 shadow-elegant-lg border border-neutral-200'>
-                        <div className='text-center'>
-                            <div className='text-2xl font-bold text-gradient'>5+</div>
-                            <div className='text-xs text-neutral-600 font-medium'>Years Experience</div>
+                    {/* Creative Frame */}
+                    <div className="absolute -inset-4 bg-gradient-to-br from-purple-200 via-pink-200 to-orange-200 rounded-3xl opacity-30 blur-xl"></div>
+                    <div className="relative bg-white p-4 rounded-2xl shadow-creative">
+                        <div className='w-80 h-80 lg:w-96 lg:h-96 relative overflow-hidden rounded-xl'>
+                            <Image
+                                src="/assets/about.png"
+                                fill
+                                className='object-cover'
+                                alt="Neha Sharma - Frontend Developer"
+                            />
                         </div>
                     </div>
 
-                    {/* Tech badge */}
-                    <div className='absolute -top-4 -left-4 bg-white rounded-xl p-3 shadow-elegant border border-neutral-200'>
-                        <div className='flex items-center space-x-2'>
-                            <div className='w-3 h-3 bg-green-400 rounded-full animate-pulse'></div>
-                            <span className='text-xs font-medium text-neutral-700'>Available for work</span>
-                        </div>
+                    {/* Floating Creative Elements */}
+                    <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-60 animate-pulse"></div>
+                    <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-70 animate-pulse delay-500"></div>
+
+                    {/* Creative Badge */}
+                    <div className="absolute top-4 -left-6 bg-white rounded-full px-4 py-2 shadow-creative border border-gray-100">
+                        <span className="text-sm font-medium text-gradient">✨ Creative Developer</span>
                     </div>
                 </div>
             </div>
