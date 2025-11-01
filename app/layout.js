@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 import Header from "./components/Header.jsx";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={inter.className} suppressHydrationWarning={true}>
         <Header />
+        <Analytics />
         <div className="pt-20">
           {children}
         </div>
