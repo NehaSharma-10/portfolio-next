@@ -1,7 +1,6 @@
 ﻿"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import ComputerIcon from "@mui/icons-material/Computer";
 import PaletteIcon from "@mui/icons-material/Palette";
@@ -56,36 +55,45 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="space-y-16">
-      {/* Main Skills */}
+    <div className="space-y-20">
+      {/* Main Skills - Redesigned */}
       <div>
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-secondary rounded-full border border-custom mb-4">
+          <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-secondary rounded-full border border-custom mb-4">
             <ComputerIcon className="text-accent" />
             <span className="text-secondary font-medium">Technical Skills</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Tools & <span className="gradient-text">Technologies</span>
           </h2>
+          <p className="text-secondary text-lg max-w-2xl mx-auto">
+            Technologies I work with to build modern web applications
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        {/* Larger, cleaner skill cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
               data-index={index}
-              className={`skill-card card text-center space-y-4 transition-all duration-500 ${visibleSkills.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`skill-card group relative p-8 bg-secondary rounded-2xl border border-custom hover:border-accent transition-all duration-500 hover:shadow-custom-lg ${visibleSkills.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <div className="relative w-16 h-16 mx-auto">
-                <Image
-                  src={skill.image}
-                  fill
-                  className="object-contain"
-                  alt={`${skill.name} logo`}
-                />
+              <div className="flex flex-col items-center space-y-4">
+                <div className="relative w-20 h-20">
+                  <Image
+                    src={skill.image}
+                    fill
+                    sizes="80px"
+                    className="object-contain group-hover:scale-110 transition-transform duration-300"
+                    alt={`${skill.name} logo`}
+                    loading="lazy"
+                    quality={85}
+                  />
+                </div>
+                <h3 className="font-semibold text-primary text-lg">{skill.name}</h3>
               </div>
-              <h3 className="font-semibold text-primary">{skill.name}</h3>
             </div>
           ))}
         </div>
@@ -128,12 +136,12 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Status */}
+      {/* Developer Highlights */}
       <div className="flex flex-wrap justify-center gap-6">
         {[
-          { icon: "⚡", title: "Fast Delivery", desc: "2-4 weeks average" },
-          { icon: "🎯", title: "Pixel Perfect", desc: "Attention to detail" },
-          { icon: "🚀", title: "Future Ready", desc: "Latest technologies" }
+          { icon: "⚡", title: "Clean Code", desc: "Maintainable & scalable" },
+          { icon: "🎯", title: "Best Practices", desc: "Industry standards" },
+          { icon: "🚀", title: "Modern Stack", desc: "Latest technologies" }
         ].map((item, index) => (
           <div key={index} className="card text-center space-y-2 min-w-[200px]">
             <div className="text-3xl">{item.icon}</div>
@@ -144,14 +152,14 @@ const Skills = () => {
       </div>
 
       {/* Availability */}
-      <div className="text-center">
-        <div className="inline-flex items-center space-x-4 px-6 py-4 bg-secondary rounded-full border border-custom">
-          <div className="flex items-center space-x-2">
+      <div className="text-center px-4">
+        <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-secondary rounded-full border border-custom max-w-full">
+          <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-glow"></div>
-            <span className="text-secondary font-medium">Available for Projects</span>
+            <span className="text-secondary font-medium text-sm sm:text-base whitespace-nowrap">Open to Opportunities</span>
           </div>
-          <div className="w-px h-6 bg-tertiary"></div>
-          <span className="text-secondary">Response within 24hrs</span>
+          <div className="hidden sm:block w-px h-6 bg-tertiary"></div>
+          <span className="text-secondary text-sm sm:text-base">Available for collaboration</span>
         </div>
       </div>
     </div>

@@ -2,11 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AppsIcon from "@mui/icons-material/Apps";
-import BrushIcon from "@mui/icons-material/Brush";
-import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const Projects = () => {
@@ -82,24 +77,25 @@ const Projects = () => {
   return (
     <div className="space-y-12">
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3">
-        {[
-          { key: 'all', label: 'All Projects', icon: '' },
-          { key: 'frontend', label: 'Frontend', icon: '' },
-          { key: 'fullstack', label: 'Full Stack', icon: '' }
-        ].map(({ key, label, icon }) => (
-          <button
-            key={key}
-            onClick={() => setFilter(key)}
-            className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${filter === key
-              ? 'bg-accent text-white shadow-custom-lg'
-              : 'bg-secondary text-secondary hover:bg-tertiary'
-              }`}
-          >
-            <span className="mr-2">{icon}</span>
-            {label}
-          </button>
-        ))}
+      <div className="overflow-x-auto pb-2 px-4 scrollbar-thin">
+        <div className="flex justify-center gap-2 sm:gap-3 min-w-max mx-auto">
+          {[
+            { key: 'all', label: 'All' },
+            { key: 'frontend', label: 'Frontend' },
+            { key: 'fullstack', label: 'Full Stack' }
+          ].map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => setFilter(key)}
+              className={`group flex-shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${filter === key
+                ? 'bg-accent text-white shadow-custom-lg scale-105'
+                : 'bg-secondary text-secondary hover:bg-tertiary hover:scale-105'
+                }`}
+            >
+              <span className="whitespace-nowrap">{label}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Projects Grid */}
@@ -115,8 +111,11 @@ const Projects = () => {
               <Image
                 src={project.image}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 alt={project.name}
+                loading="lazy"
+                quality={85}
               />
               {/* Overlay with Links */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100">
@@ -167,16 +166,15 @@ const Projects = () => {
 
       {/* CTA Section */}
       <div className="card text-center space-y-6 p-12 md:p-16 bg-secondary border-2 border-accent hover:border-accent transition-all">
-        <div className="text-6xl mb-4">🚀</div>
         <h3 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-          Ready to Start Your Next Project?
+          Interested in Collaborating?
         </h3>
         <p className="text-secondary text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Let's collaborate and bring your vision to life with cutting-edge technology and creative design.
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
           <Link href="#contact" className="btn-primary group">
-            Let's Build Something Amazing
+            Get In Touch
             <ArrowForwardIcon className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link href="#about" className="btn-secondary">

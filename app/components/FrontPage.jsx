@@ -6,7 +6,6 @@ import ChatIcon from "@mui/icons-material/Chat";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const FrontPage = () => {
   const [typedText, setTypedText] = useState("");
@@ -32,81 +31,76 @@ const FrontPage = () => {
   }, [typedText, currentIndex]);
 
   return (
-    <div className="h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Playful Background Elements */}
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 px-4">
+      {/* Simple Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent opacity-10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-secondary opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-accent opacity-5 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
-
-        {/* Decorative shapes */}
-        <div className="absolute top-32 right-20 w-20 h-20 border-2 border-accent opacity-20 rounded-lg" style={{ transform: 'rotate(45deg)' }}></div>
-        <div className="absolute bottom-32 left-32 w-16 h-16 border-2 border-accent-secondary opacity-20 rounded-full"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent opacity-5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-secondary opacity-5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container-custom relative z-10">
-        <div className="text-center space-y-8 animate-fade-in-up">
+      <div className="max-w-5xl mx-auto w-full relative z-10">
+        <div className="text-center space-y-6 sm:space-y-8">
           {/* Greeting */}
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-secondary rounded-full border border-custom">
-            <span className="text-2xl animate-bounce-subtle">👋</span>
-            <span className="text-secondary font-medium">Hello, I'm</span>
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-secondary rounded-full border border-custom">
+            <span className="text-xl sm:text-2xl">👋</span>
+            <span className="text-secondary font-medium text-sm sm:text-base">Hello, I'm</span>
           </div>
 
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
             Neha <span className="gradient-text">Sharma</span>
           </h1>
 
           {/* Typing Animation */}
-          <div className="h-12 flex items-center justify-center">
-            <p className="text-2xl md:text-3xl text-secondary font-medium">
+          <div className="min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[4rem] flex items-center justify-center">
+            <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl text-secondary font-medium px-2">
               {typedText}
               <span className="animate-pulse-glow">|</span>
             </p>
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-            I craft beautiful, functional, and user-friendly web experiences
-            that bring ideas to life with clean code and creative design.
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl text-secondary max-w-2xl mx-auto leading-relaxed px-2">
+            Frontend Developer passionate about building elegant, performant web applications
+            with modern technologies and best practices.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Link href="#projects" className="btn-primary">
-              View My Work
-              <ArrowForwardIcon className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center pt-2 sm:pt-4 max-w-md sm:max-w-none mx-auto">
+            <Link href="#projects" className="btn-primary justify-center">
+              View My Projects
+              <ArrowForwardIcon />
             </Link>
-            <Link href="#contact" className="btn-secondary">
-              Let's Talk
-              <ChatIcon className="w-5 h-5" />
+            <Link href="#contact" className="btn-secondary justify-center">
+              Get In Touch
+              <ChatIcon />
             </Link>
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center items-center space-x-6 pt-4">
+          <div className="flex justify-center items-center gap-3 sm:gap-4 pt-4 sm:pt-6">
             <Link
               href="https://github.com/NehaSharma-10"
               target="_blank"
-              className="p-3 bg-secondary hover:bg-tertiary rounded-xl transition-all duration-300 hover-lift"
+              className="p-2.5 sm:p-3 bg-secondary hover:bg-accent hover:text-white rounded-xl transition-all duration-300"
               aria-label="GitHub"
             >
-              <GitHubIcon className="w-6 h-6" />
+              <GitHubIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
             </Link>
             <Link
               href="https://www.linkedin.com/in/nehasharma8529"
               target="_blank"
-              className="p-3 bg-secondary hover:bg-tertiary rounded-xl transition-all duration-300 hover-lift"
+              className="p-2.5 sm:p-3 bg-secondary hover:bg-accent hover:text-white rounded-xl transition-all duration-300"
               aria-label="LinkedIn"
             >
-              <LinkedInIcon className="w-6 h-6" />
+              <LinkedInIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
             </Link>
             <Link
               href="mailto:shrmatwinkle246@gmail.com"
-              className="p-3 bg-secondary hover:bg-tertiary rounded-xl transition-all duration-300 hover-lift"
+              className="p-2.5 sm:p-3 bg-secondary hover:bg-accent hover:text-white rounded-xl transition-all duration-300"
               aria-label="Email"
             >
-              <EmailIcon className="w-6 h-6" />
+              <EmailIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
             </Link>
           </div>
         </div>

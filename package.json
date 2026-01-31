@@ -11,20 +11,14 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@headlessui/react": "^2.2.0",
-    "@heroicons/react": "^2.2.0",
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
-    "@nextui-org/react": "^2.2.10",
     "@vercel/analytics": "^1.5.0",
-    "aos": "^2.3.4",
     "axios": "^1.7.8",
-    "framer-motion": "^11.0.27",
-    "next": "^14.2.33",
+    "next": "^16.1.6",
     "nodemailer": "^7.0.10",
     "react": "^18",
-    "react-dom": "^18",
-    "reactflow": "^11.11.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
