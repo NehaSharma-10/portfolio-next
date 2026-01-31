@@ -1,5 +1,5 @@
 ﻿"use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import ComputerIcon from "@mui/icons-material/Computer";
@@ -10,10 +10,55 @@ import SearchIcon from "@mui/icons-material/Search";
 import SyncIcon from "@mui/icons-material/Sync";
 import LinkIcon from "@mui/icons-material/Link";
 
+const SkillCard = React.memo(({ skill, index, isVisible }) => (
+  <div
+    data-index={index}
+    className={`skill-card group relative p-8 bg-secondary rounded-2xl border border-custom hover:border-accent transition-all duration-500 hover:shadow-custom-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+  >
+    <div className="flex flex-col items-center space-y-4">
+      <div className="relative w-20 h-20">
+        <Image
+          src={skill.image}
+          fill
+          sizes="80px"
+          className="object-contain group-hover:scale-110 transition-transform duration-300"
+          alt={`${skill.name} logo`}
+          loading="lazy"
+          quality={85}
+        />
+      </div>
+      <h3 className="font-semibold text-primary text-lg">{skill.name}</h3>
+    </div>
+  </div>
+));
+
+SkillCard.displayName = 'SkillCard';
+
+const AdditionalSkillCard = React.memo(({ skill, index }) => (
+  <div
+    key={index}
+    className="group p-6 bg-tertiary rounded-xl border border-custom hover-lift text-center space-y-3 relative overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+    <div className="relative z-10">
+      <div className="group-hover:scale-125 transition-transform duration-300 filter group-hover:drop-shadow-lg flex justify-center items-center text-accent">
+        {skill.icon}
+      </div>
+      <h4 className="font-semibold text-primary group-hover:gradient-text transition-all">
+        {skill.name}
+      </h4>
+      <p className="text-sm text-secondary">{skill.description}</p>
+    </div>
+  </div>
+));
+
+AdditionalSkillCard.displayName = 'AdditionalSkillCard';
+
 const Skills = () => {
   const [visibleSkills, setVisibleSkills] = useState(new Set());
 
-  const skills = [
+  const skills = useMemo(() => [
     { name: "HTML5", image: "/assets/Html.webp", level: 95 },
     { name: "CSS3", image: "/assets/CSS.webp", level: 90 },
     { name: "JavaScript", image: "/assets/JS.webp", level: 88 },
@@ -22,16 +67,22 @@ const Skills = () => {
     { name: "Tailwind CSS", image: "/assets/tailwindcss.webp", level: 90 },
     { name: "Bootstrap", image: "/assets/bootstrap.webp", level: 80 },
     { name: "Node.js", image: "/assets/node.webp", level: 75 },
-  ];
+  ], []);
 
-  const additionalSkills = [
+  const additionalSkills = useMemo(() => [
     { name: "UI/UX Design", icon: <PaletteIcon sx={{ fontSize: 40 }} />, description: "Creating intuitive experiences" },
     { name: "Responsive Design", icon: <PhoneAndroidIcon sx={{ fontSize: 40 }} />, description: "Mobile-first approach" },
     { name: "Performance", icon: <BoltIcon sx={{ fontSize: 40 }} />, description: "Lightning-fast websites" },
     { name: "SEO", icon: <SearchIcon sx={{ fontSize: 40 }} />, description: "Search optimization" },
     { name: "Git", icon: <SyncIcon sx={{ fontSize: 40 }} />, description: "Version control" },
     { name: "API Integration", icon: <LinkIcon sx={{ fontSize: 40 }} />, description: "Seamless connectivity" },
-  ];
+  ], []);
+
+  const highlights = useMemo(() => [
+    { icon: "⚡", title: "Clean Code", desc: "Maintainable & scalable" },
+    { icon: "🎯", title: "Best Practices", desc: "Industry standards" },
+    { icon: "🚀", title: "Modern Stack", desc: "Latest technologies" }
+  ], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -74,27 +125,12 @@ const Skills = () => {
         {/* Larger, cleaner skill cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
-            <div
-              key={index}
-              data-index={index}
-              className={`skill-card group relative p-8 bg-secondary rounded-2xl border border-custom hover:border-accent transition-all duration-500 hover:shadow-custom-lg ${visibleSkills.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-            >
-              <div className="flex flex-col items-center space-y-4">
-                <div className="relative w-20 h-20">
-                  <Image
-                    src={skill.image}
-                    fill
-                    sizes="80px"
-                    className="object-contain group-hover:scale-110 transition-transform duration-300"
-                    alt={`${skill.name} logo`}
-                    loading="lazy"
-                    quality={85}
-                  />
-                </div>
-                <h3 className="font-semibold text-primary text-lg">{skill.name}</h3>
-              </div>
-            </div>
+            <SkillCard
+              key={skill.name}
+              skill={skill}
+              index={index}
+              isVisible={visibleSkills.has(index)}
+            />
           ))}
         </div>
       </div>
@@ -116,21 +152,7 @@ const Skills = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="group p-6 bg-tertiary rounded-xl border border-custom hover-lift text-center space-y-3 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="group-hover:scale-125 transition-transform duration-300 filter group-hover:drop-shadow-lg flex justify-center items-center text-accent">
-                    {skill.icon}
-                  </div>
-                  <h4 className="font-semibold text-primary group-hover:gradient-text transition-all">
-                    {skill.name}
-                  </h4>
-                  <p className="text-sm text-secondary">{skill.description}</p>
-                </div>
-              </div>
+              <AdditionalSkillCard key={skill.name} skill={skill} index={index} />
             ))}
           </div>
         </div>
@@ -138,12 +160,8 @@ const Skills = () => {
 
       {/* Developer Highlights */}
       <div className="flex flex-wrap justify-center gap-6">
-        {[
-          { icon: "⚡", title: "Clean Code", desc: "Maintainable & scalable" },
-          { icon: "🎯", title: "Best Practices", desc: "Industry standards" },
-          { icon: "🚀", title: "Modern Stack", desc: "Latest technologies" }
-        ].map((item, index) => (
-          <div key={index} className="card text-center space-y-2 min-w-[200px]">
+        {highlights.map((item, index) => (
+          <div key={item.title} className="card text-center space-y-2 min-w-[200px]">
             <div className="text-3xl">{item.icon}</div>
             <div className="font-bold gradient-text">{item.title}</div>
             <p className="text-sm text-secondary">{item.desc}</p>

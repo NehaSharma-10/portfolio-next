@@ -1,0 +1,19 @@
+{
+  "name": "Neha Sharma - Frontend Developer Portfolio",
+  "short_name": "Neha Sharma",
+  "description": "Portfolio of Neha Sharma - Frontend Developer specializing in React, Next.js, and modern web technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US"
+}
